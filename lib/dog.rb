@@ -61,7 +61,6 @@ class Dog
   end
 
   def self.find_by_id(id)
-    binding.pry
     DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id).flatten
   end
 end
