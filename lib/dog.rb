@@ -64,7 +64,7 @@ class Dog
   def self.find_or_create_by(name: name, breed: breed)
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
           binding.pry
-    if DB[:conn].execute(sql, name, breed) != nil
+    if DB[:conn].execute(sql, name, breed) != []
       id = DB[:conn].execute(sql, name, breed).flatten[0]
       self.find_by_id(id)
     else
