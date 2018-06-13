@@ -25,6 +25,10 @@ class Dog
   end
 
   def save
-    DB[:conn].execute('INSERT INTO dogs (name, breed) VALUES (?,?)', name, breed)
+    if self.id 
+      self.update
+    else
+      DB[:conn].execute('INSERT INTO dogs (name, breed) VALUES (?,?)', self.name, self.breed)
+      @id = DB[:conn].execute('SELECT last_insert_rowid() FROM dogs').flatten
   end
 end
