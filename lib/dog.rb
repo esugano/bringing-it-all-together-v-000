@@ -68,6 +68,7 @@ class Dog
       self.find_by_id(id)
     else
       new_dog = self.create(name: name, breed:breed)
+      binding.pry
       new_dog
     end
   end
