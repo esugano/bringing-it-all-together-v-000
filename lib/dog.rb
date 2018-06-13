@@ -16,7 +16,8 @@ class Dog
       breed TEXT
     )
     SQL
-
+    
+    DB[:conn].execute('DROP TABLE IF EXISTS dogs')
     DB[:conn].execute(sql)
   end
 end
