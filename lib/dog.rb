@@ -25,6 +25,6 @@ class Dog
   end
 
   def save
-    DB[:conn].execute('INSERT INTO dogs (name, breed) VALUES (?,?)', self.name, self.breed)
+    DB[:conn].execute('INSERT INTO dogs (name, breed) VALUES (?,?)', name, breed)
   end
 end
