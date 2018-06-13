@@ -41,9 +41,9 @@ class Dog
     SET name = ?, breed = ?
     WHERE id = ?
     SQL
-
+      binding.pry
     DB[:conn].execute(sql, self.name, self.breed, self.id)
-    binding.pry
+
   end
 
 end
